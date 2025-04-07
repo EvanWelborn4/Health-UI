@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap" rel="stylesheet">
+    <script src="js/patient_fetch.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="images/TestLogo.png" alt="Tech.Care Logo">
+
+        <div class="navButtons">
+            <button>
+             <img src="images/home_FILL0_wght300_GRAD0_opsz24.png" alt="icon"/>
+             Overview
+            </button>
+            <button class="activeButton">
+                <img src="images/group_FILL0_wght300_GRAD0_opsz24.png" alt="icon"/>
+                Patients
+            </button>
+            <button>
+                <img src="images/calendar_today_FILL0_wght300_GRAD0_opsz24.png" alt="icon">
+                Schedule
+            </button>
+            <button>
+                <img src="images/chat_bubble_FILL0_wght300_GRAD0_opsz24.png" alt="icon">
+                Messages
+            </button>
+            <button>
+                <img src="images/credit_card_FILL0_wght300_GRAD0_opsz24.png" alt="icon">
+                Transactions
+            </button>
+        </div>
+
+        <div class="profileSection">
+                <img src="images/senior-woman-doctor-and-portrait-smile-for-health-2023-11-27-05-18-16-utc.png" alt="Profile Pic">
+                <div class="profileText">
+                  <p class="boldName">Dr. Jose Simmons</p>
+                  <p> General Practitioner</p>
+                </div>
+                <button>
+                    <img src="images/settings_FILL0_wght300_GRAD0_opsz24.png" alt="icon">
+                </button>
+                <button>
+                    <img src="images/more_vert_FILL0_wght300_GRAD0_opsz24.png" alt="icon">
+                </button>
+        </div>
+    </nav>
+        
+        <div class="patient-scroll-list">
+            <div class="patient-scroll-list-flex">
+                <h2>Patients</h2>
+                <img src="images/search_FILL0_wght300_GRAD0_opsz24.png" alt="icon">
+            </div>
+            <div class="patient-scroll" id="patient-list"></div>
+        </div>
+    <div class="diagnosis-history">
+        <div class="diagnosis-history-header">
+            <h3>Diagnosis History</h2>   
+         </div>
+    </div>
+    <div class="diagnosis-history-graph">
+        <div class="diagnosis-history-graph-header">
+            <h2>Blood Pressure</h2>
+            <select>
+                <option value="last-6-months">Last 6 Months</option>
+            </select> 
+            
+        </div>
+        <div class="diagnosis-history-graph-flex">
+        <canvas id="blood-pressure-chart"></canvas>
+        <div class="blood-pressure-side">
+         <div class="blood-pressure-systolic">
+            <div class="dot-label">
+                <span class="dot"></span>
+                <h4>Systolic</h4>
+            </div>
+            <div>
+                <p id="systolic-value">--</p>
+                <small id="systolic-average">--</small>
+
+            </div>
+         </div>
+         <hr></hr>
+         <div class="blood-pressure-diastolic">
+            <div class="dot-label">
+                <span class="dot"></span>
+                <h4>Diastolic</h4>
+                </div>
+            <div>
+                <p id="diastolic-value">--</p>
+                <small id="diastolic-average">--</small>
+            </div>
+         </div>
+      </div>
+     </div>
+    </div>
+    <div class="diagnosis-card-1">
+        <img src="images/respiratory rate.png" alt="Respiratory Rate">
+        <h5>Respiratory Rate</h5>
+        <p id="respiratory-rate-value">--</p>
+        <small id="respiratory-rate-average">--</small>
+    </div>
+    <div class="diagnosis-card-2">
+        <img src="images/temperature.png" alt="Temperature">
+        <h5>Temperature</h5>
+        <p id="temperature-value">--</p>
+        <small id="temperature-average">--</small>
+    </div>
+    <div class="diagnosis-card-3">
+        <img src="images/HeartBPM.png" alt="Heart Rate">
+        <h5>Heart Rate</h5>
+        <p id="heart-rate-value">--</p>
+        <small id="heart-rate-average">--</small>
+    </div>
+    <div class="diagnosis-list">
+      <h2 class="diagnosis-list-header">Diagnostic List</h2>
+      <div class="diagnosis-list-label">
+        <p>Problem/Diagnosis</p>
+        <p>Description</p>
+        <p>Status</p>
+      </div>
+      <div class="diagnosis-list-container" id="diagnosis-list-id"></div>
+
+    </div>
+    <div class="patient-info" id="patient-info-id">
+        <div class="patient-header" id="patient-header-id"></div>
+        <div class="patient-info-list" id="patient-info-list-id"></div>
+        <div class="patient-info-button">
+            <button class="show-all-patient-info">Show All Infomation</button>
+        </div>
+    </div>
+
+    <div class="lab-results">
+      <h2 class="lab-results-header">Lab Results</h2>
+      <div class="lab-results-list" id="lab-results-list-id">
+    </div>
+  </div>
+
+    
+</body>
+</html>
